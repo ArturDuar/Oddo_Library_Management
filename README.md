@@ -19,7 +19,7 @@ Este módulo personalizado permite gestionar libros, préstamos y socios. A cont
 1. **Clonar el repositorio del módulo en la carpeta `addons` del proyecto Odoo**
 
 ```bash
-git clone https://github.com/ArturDuar/Oddo_Library_Management.git
+git clone https://github.com/ArturDuar/Odoo_Library_Management.git
 ```
 
 2. **En la carpeta raiz del proyecto Odoo, crea el entorno virtual**
