@@ -10,6 +10,7 @@
                 <field name="autor"/>
                 <field name="fecha_publicacion"/>
                 <field name="antiguedad"/>
+                <field name="estado"/>
             </list>
         </field>
     </record>
@@ -27,7 +28,37 @@
                         <field name="autor"/>
                         <field name="fecha_publicacion"/>
                         <field name="antiguedad"/>
+                        <field name="estado"/>
                     </group>
+
+                    <!-- Aquí comienza el notebook -->
+                    <notebook>
+                        <page string="Préstamo Activo">
+                            <field name="prestamo_ids">
+                                <list>
+                                    <field name="socio"/>
+                                    <field name="fecha"/>
+                                    <field name="estado"/>
+                                </list>
+                                <form>
+                                    <group>
+                                        <field name="socio"/>
+                                        <field name="fecha"/>
+                                        <field name="estado"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                        <page string="Préstamos entregados">
+                            <field name="prestamo_entregados_ids">
+                                <list>
+                                    <field name="socio" readonly="1" />
+                                    <field name="fecha" readonly="1" />
+                                    <field name="estado" readonly="1" />
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
@@ -44,6 +75,7 @@
                 <field name="autor"/>
                 <field name="fecha_publicacion"/>
                 <field name="antiguedad"/>
+                <field name="estado"/>
                 
                 <!-- Definir cómo se va a mostrar cada socio -->
                 <templates>
