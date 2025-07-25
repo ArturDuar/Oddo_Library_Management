@@ -1,0 +1,30 @@
+<odoo>
+    <!-- Acción para abrir la vista de socios -->
+    <record id="action_socio" model="ir.actions.act_window">
+        <field name="name">Socios</field>
+        <field name="res_model">socio</field>
+        <field name="view_mode">form,kanban,list</field>
+        <field name="view_id" ref="view_socio_kanban"/>
+        <field name="context">{}</field>
+    </record>
+
+    <record id="action_libro" model="ir.actions.act_window">
+        <field name="name">Libros</field>
+        <field name="res_model">libro</field>
+        <field name="view_mode">form,kanban,list</field>
+        <field name="view_id" ref="view_libro_list"/>
+        <field name="context">{}</field>
+    </record>
+
+    <!-- Menú principal para los tickets -->
+    <menuitem id="menu_biblioteca_root" name="Mi Biblioteca" sequence="1"/>
+
+    <menuitem id="menu_socios" name="Socios"
+              parent="menu_biblioteca_root"
+              action="action_socio" sequence="20"/>
+
+    <menuitem id="menu_libros" name="Libros"
+              parent="menu_biblioteca_root"
+              action="action_libro" sequence="10"/>
+
+</odoo>

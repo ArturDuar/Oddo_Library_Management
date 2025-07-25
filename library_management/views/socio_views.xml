@@ -1,0 +1,63 @@
+<odoo>
+
+
+    <record id="view_socio_list" model="ir.ui.view">
+        <field name="name">socio.list</field>
+        <field name="model">socio</field>
+        <field name="arch" type="xml">
+            <list string="Socio" delete="true">
+                <field name="codigo"/>
+                <field name="name" string="Nombre"/>
+                <field name="fecha_alta"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_socio_form" model="ir.ui.view">
+        <field name="name">socio.form</field>
+        <field name="model">socio</field>
+        <field name="arch" type="xml">
+            <form string="Socio">
+                <sheet>
+                    <group>
+                        <field name="codigo"/>
+                        <field name="name"/>
+                        <field name="fecha_alta"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_socio_kanban" model="ir.ui.view">
+        <field name="name">socio.kanban</field>
+        <field name="model">socio</field>
+        <field name="arch" type="xml">
+            <kanban string="Socio">
+                <field name="codigo"/>
+                <field name="name"/>
+                <field name="fecha_alta"/>
+                
+                <!-- Definir cómo se va a mostrar cada socio -->
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="o_kanban_record">
+                            <div class="o_kanban_record_title">
+                                        <field name="codigo"/>
+                                    </div>
+                            <div class="o_kanban_details">
+                                <div class="o_kanban_record_description">
+                                    <field name="name"/>
+                                </div>
+                                <div class="o_kanban_record_date">
+                                    <field name="fecha_alta"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    
+</odoo>

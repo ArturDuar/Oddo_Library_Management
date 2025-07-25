@@ -1,0 +1,76 @@
+<odoo>
+
+    <record id="view_libro_list" model="ir.ui.view">
+        <field name="name">libro.list</field>
+        <field name="model">libro</field>
+        <field name="arch" type="xml">
+            <list string="Libro" delete="true">
+                <field name="isbn" string="ISBN"/>
+                <field name="titulo"/>
+                <field name="autor"/>
+                <field name="fecha_publicacion"/>
+                <field name="antiguedad"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Vista de formulario para los libros -->
+    <record id="view_libro_form" model="ir.ui.view">
+        <field name="name">libro.form</field>
+        <field name="model">libro</field>
+        <field name="arch" type="xml">
+            <form string="Libro">
+                <sheet>
+                    <group>
+                        <field name="isbn"/>
+                        <field name="titulo"/>
+                        <field name="autor"/>
+                        <field name="fecha_publicacion"/>
+                        <field name="antiguedad"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista Kanban para los socios -->
+    <record id="view_libro_kanban" model="ir.ui.view">
+        <field name="name">libro.kanban</field>
+        <field name="model">libro</field>
+        <field name="arch" type="xml">
+            <kanban string="Libro">
+                <field name="isbn"/>
+                <field name="titulo"/>
+                <field name="autor"/>
+                <field name="fecha_publicacion"/>
+                <field name="antiguedad"/>
+                
+                <!-- Definir cómo se va a mostrar cada socio -->
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="o_kanban_record">
+                            <div class="o_kanban_record_title">
+                                    <field name="isbn"/>
+                            </div>
+                            <div class="o_kanban_details">
+                                <div class="o_kanban_record_title">
+                                    <field name="titulo"/>
+                                </div>
+                                <div class="o_kanban_record_subtitle">
+                                    <field name="autor"/>
+                                </div>
+                                <div class="o_kanban_record_date">
+                                    <field name="fecha_publicacion"/>
+                                </div>
+                                <div class="o_kanban_record_antiguedad">
+                                    <field name="antiguedad"/>
+                                </div>    
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    
+</odoo>
