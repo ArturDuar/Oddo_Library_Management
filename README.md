@@ -8,7 +8,7 @@ Este módulo personalizado permite gestionar libros, préstamos y socios. A cont
 
 - Python 3.8 o superior
 - PostgreSQL instalado y corriendo
-- Odoo 18 (o la versión correspondiente al módulo)
+- Odoo 18
 - Git
 - Indicaciones sugeridas para entornos Windows
 
